@@ -22,7 +22,7 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         parameters=[
-            {'robot_description': robot_urdf}
+            {'robot_description': robot_urdf, 'use_sim_time': True}
         ]
     )
 
@@ -55,16 +55,16 @@ def generate_launch_description():
     # Run the spawner node from the ros_gz_sim package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
-                                   '-name', 'my_bot', "-z", '0.5' , "-y", '0.0', "-x", '0.0' ],
+                                   '-name', 'Rover', "-z", '0.5' , "-y", '0.0', "-x", '0.0' ],
                         output='screen')
 
 
 
     return LaunchDescription([
         robot_state_publisher_node,
-        joint_state_publisher_node,
+        # joint_state_publisher_node,
         world_arg,
-        gazebo,
+        # gazebo,
         # ros_gz_bridge,
-        spawn_entity,
+        # spawn_entity,
     ])

@@ -1,0 +1,264 @@
+<?xml version="1.0" ?>
+<robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Rover_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Rover_description)/urdf/Rover.trans" />
+<xacro:include filename="$(find Rover_description)/urdf/Rover.gazebo" />
+
+<link name="dummy_base_link"></link>
+
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-6.106915349179497e-13 -0.02576797376370591 0.3408721287496551" rpy="0 0 0"/>
+    <mass value="119.00094541166615"/>
+    <inertia ixx="11.367893" iyy="2.895706" izz="13.361019" ixy="-0.0" iyz="0.11269" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fr_wheel_1">
+  <inertial>
+    <origin xyz="-0.055000000000000104 1.0988582432869265e-07 -4.0437316894958997e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35 0.491042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/fr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35 0.491042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/fr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="mr_wheel_1">
+  <inertial>
+    <origin xyz="-0.055000000000000104 1.0988582444665385e-07 -4.0437316886632324e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35 0.051042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/mr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35 0.051042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/mr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="br_wheel_1">
+  <inertial>
+    <origin xyz="-0.055000000000000104 1.0988582443971495e-07 -4.0437316886632324e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.35 -0.388958 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/br_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.35 -0.388958 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/br_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fl_wheel_1">
+  <inertial>
+    <origin xyz="0.05500000000000005 1.0988582432869265e-07 -4.0437316894958997e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35 0.491042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/fl_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35 0.491042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/fl_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ml_wheel_1">
+  <inertial>
+    <origin xyz="0.05500000000000005 1.0988582444665385e-07 -4.0437316886632324e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35 0.051042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/ml_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35 0.051042 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/ml_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bl_wheel_1">
+  <inertial>
+    <origin xyz="0.05500000000000005 1.0988582443971495e-07 -4.0437316886632324e-07" rpy="0 0 0"/>
+    <mass value="11.601995917486711"/>
+    <inertia ixx="0.209416" iyy="0.116407" izz="0.116407" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35 -0.388958 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/bl_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35 -0.388958 -0.196191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/bl_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cam_link_1">
+  <inertial>
+    <origin xyz="0.0023214284363409377 6.917077683965545e-07 0.03267816705539389" rpy="0 0 0"/>
+    <mass value="0.023310617489636382"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.562258 -0.451191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/cam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.562258 -0.451191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/cam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cam_1">
+  <inertial>
+    <origin xyz="-0.016571501440010395 -0.026721074701518743 1.695522619860057e-05" rpy="0 0 0"/>
+    <mass value="0.04317333055495183"/>
+    <inertia ixx="6e-06" iyy="2.9e-05" izz="3.2e-05" ixy="-3e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.02 0.562251 -0.501191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.02 0.562251 -0.501191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Rover_description)/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="dummy" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="dummy_base_link"/>
+  <child link="base_link"/>
+</joint>
+
+
+<joint name="frw_to_body" type="continuous">
+  <origin xyz="-0.35 -0.491042 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="fr_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="mrw_to_body" type="continuous">
+  <origin xyz="-0.35 -0.051042 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="mr_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="brw_to_body" type="continuous">
+  <origin xyz="-0.35 0.388958 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="br_wheel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="flw_to_body" type="continuous">
+  <origin xyz="0.35 -0.491042 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="fl_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="mlw_to_body" type="continuous">
+  <origin xyz="0.35 -0.051042 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="ml_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="blw_to_body" type="continuous">
+  <origin xyz="0.35 0.388958 0.196191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="bl_wheel_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="camlink_to_body" type="continuous">
+  <origin xyz="0.0 -0.562258 0.451191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="cam_link_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="cam_to_camlink" type="continuous">
+  <origin xyz="0.02 7e-06 0.05" rpy="0 0 0"/>
+  <parent link="cam_link_1"/>
+  <child link="cam_1"/>
+  <axis xyz="1.0 0.000341 0.0"/>
+</joint>
+
+</robot>

@@ -112,13 +112,13 @@ def generate_launch_description():
         ]
     )
 
-    move_control = Node(
-        package="cpp_omnidrive_gazebo_controller",
-        executable="omni_gz_con",
-        arguments=[
+    # move_control = Node(
+    #     package="cpp_omnidrive_gazebo_controller",
+    #     executable="omni_gz_con",
+    #     arguments=[
  
-        ]
-    )
+    #     ]
+    # )
 
     # Launch them all!
     return LaunchDescription([
@@ -127,6 +127,6 @@ def generate_launch_description():
         gazebo,
         ros_gz_bridge,
         spawn_entity,
-        move_control,
+        # move_control,
 
     ])

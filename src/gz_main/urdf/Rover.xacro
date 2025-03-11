@@ -155,6 +155,7 @@
     </geometry>
   </collision>
 </link>
+ 
 
 <!-- <link name="cam_link_1">
   <inertial>
@@ -260,5 +261,8 @@
   <child link="cam_1"/>
   <axis xyz="1.0 0.000341 0.0"/>
 </joint> -->
+
+
+    
 
 </robot>

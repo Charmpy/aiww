@@ -67,7 +67,7 @@
   </actuator>
 </transmission>
 
-<transmission name="camlink_to_body_tran">
+<!-- <transmission name="camlink_to_body_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="camlink_to_body">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -87,6 +87,6 @@
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
-</transmission>
+</transmission> -->
 
 </robot>

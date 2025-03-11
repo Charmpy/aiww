@@ -2,10 +2,10 @@
 <robot name="Rover" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
-
+<!-- 
 <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
-</gazebo>
+</gazebo> -->
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -55,8 +55,48 @@
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo>
+<gazebo>
+        <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
+            <!-- <topic>joint_states</topic>  -->
+            <!-- <joint_name>gripper_joint</joint_name> -->
+        </plugin>
 
-<gazebo reference="cam_link_1">
+        <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
+
+            <!-- Wheel Information -->
+            <left_joint>blw_to_body</left_joint>
+            <left_joint>mlw_to_body</left_joint>
+            <left_joint>flw_to_body</left_joint>
+            
+            <right_joint>brw_to_body</right_joint>
+            <right_joint>mrw_to_body</right_joint>
+            <right_joint>frw_to_body</right_joint>
+
+
+            <wheel_separation>0.5</wheel_separation>
+            <wheel_radius>0.2</wheel_radius>
+
+
+            <!-- Limits -->
+            <!-- <max_wheel_torque>200</max_wheel_torque> -->
+            <max_linear_acceleration>0.33</max_linear_acceleration>
+
+            <!-- Input -->
+            <topic>cmd_vel</topic>
+
+            
+            <!-- Output -->
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
+            <odom_topic>odom</odom_topic>
+            <odom_publisher_frequency>30</odom_publisher_frequency>
+            
+            <tf_topic>/tf</tf_topic>
+
+        </plugin>
+
+</gazebo>
+<!-- <gazebo reference="cam_link_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
@@ -68,6 +108,6 @@
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
-</gazebo>
+</gazebo> -->
 
 </robot>

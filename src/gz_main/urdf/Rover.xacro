@@ -156,12 +156,7 @@
   </collision>
 </link>
 
-<!-- <link name="cam_link_1">
-  <inertial>
-    <origin xyz="0.0023214284363409377 6.917077683965545e-07 0.03267816705539389" rpy="0 0 0"/>
-    <mass value="0.023310617489636382"/>
-    <inertia ixx="8e-06" iyy="8e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
-  </inertial>
+<link name="cam_link_1">
   <visual>
     <origin xyz="-0.0 0.562258 -0.451191" rpy="0 0 0"/>
     <geometry>
@@ -169,34 +164,40 @@
     </geometry>
     <material name="silver"/>
   </visual>
-  <collision>
-    <origin xyz="-0.0 0.562258 -0.451191" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find gz_main)/meshes/cam_link_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
 </link>
 
 <link name="cam_1">
-  <inertial>
-    <origin xyz="-0.016571501440010395 -0.026721074701518743 1.695522619860057e-05" rpy="0 0 0"/>
-    <mass value="0.04317333055495183"/>
-    <inertia ixx="6e-06" iyy="2.9e-05" izz="3.2e-05" ixy="-3e-06" iyz="0.0" ixz="0.0"/>
-  </inertial>
   <visual>
-    <origin xyz="-0.02 0.562251 -0.501191" rpy="0 0 0"/>
+    <origin xyz="-0.02 0.562251 -0.501191" rpy="0.785 0 0"/>
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
-  <collision>
-    <origin xyz="-0.02 0.562251 -0.501191" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="file://$(find gz_main)/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link> -->
+</link>
+
+<gazebo reference="cam_1">
+  <sensor name="camera" type="camera">
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>30</update_rate>
+    <topic>camera/image</topic>
+    <!-- <gz_frame_id>cam_link_1</gz_frame_id> -->
+    <camera name="camera">
+      <camera_info_topic>camera/camera_info</camera_info_topic>
+      <horizontal_fov>1.8</horizontal_fov>
+      <image>
+        <format>R8G8B8</format>
+        <width>1920</width>
+        <height>1080</height>
+      </image>
+      <clip>
+        <near>0.1</near>
+        <far>5</far>
+      </clip>
+    </camera>
+  </sensor>
+</gazebo>
 
 <joint name="dummy" type="fixed">
   <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -247,18 +248,18 @@
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
-<!-- <joint name="camlink_to_body" type="continuous">
+<joint name="camlink_to_body" type="fixed">
   <origin xyz="0.0 -0.562258 0.451191" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="cam_link_1"/>
   <axis xyz="0.0 -0.0 1.0"/>
 </joint>
 
-<joint name="cam_to_camlink" type="continuous">
+<joint name="cam_to_camlink" type="fixed">
   <origin xyz="0.02 7e-06 0.05" rpy="0 0 0"/>
   <parent link="cam_link_1"/>
   <child link="cam_1"/>
   <axis xyz="1.0 0.000341 0.0"/>
-</joint> -->
+</joint>
 
 </robot>

@@ -20,7 +20,10 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="ok">
+      <color rgba="0.4 0.4 0.4 1.0"/>
+    </material>
+
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 1.57"/>
@@ -41,7 +44,9 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/fr_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue">
+      <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
   </visual>
   <collision>
     <origin xyz="0.45 0.491042 -0.196191" rpy="0 0 0"/>
@@ -62,7 +67,10 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/mr_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue">
+      <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+
   </visual>
   <collision>
     <origin xyz="0.45 0.051042 -0.196191" rpy="0 0 0"/>
@@ -83,7 +91,7 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/br_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="0.45 -0.388958 -0.196191" rpy="0 0 0"/>
@@ -104,7 +112,7 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/fl_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.45 0.491042 -0.196191" rpy="0 0 0"/>
@@ -125,7 +133,7 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/ml_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.45 0.051042 -0.196191" rpy="0 0 0"/>
@@ -146,7 +154,7 @@
     <geometry>
       <mesh filename="file://$(find gz_main)/meshes/bl_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.45 -0.388958 -0.196191" rpy="0 0 0"/>

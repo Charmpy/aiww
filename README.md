@@ -13,4 +13,5 @@ gz topic -l
 
 ```
 gz topic -i --topic <название>
+12344
 ```

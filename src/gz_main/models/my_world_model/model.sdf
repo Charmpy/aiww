@@ -7,8 +7,7 @@
         <geometry>
           <mesh>
             <uri>model://my_world_model/meshes/World.obj</uri>
-            <!-- При необходимости добавьте scale -->
-            <scale>1 1 1</scale>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </visual>
@@ -16,7 +15,7 @@
         <geometry>
           <mesh>
             <uri>model://my_world_model/meshes/World.obj</uri>
-            <scale>1 1 1</scale>
+            <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
       </collision>

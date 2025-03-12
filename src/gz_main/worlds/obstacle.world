@@ -72,8 +72,7 @@
     </model>
     <include>
       <uri>model://my_world_model</uri>
-      <!-- Задайте нужную позу для модели -->
-      <pose>2.0 0.0 0.0 0 0 0</pose>
+            <pose>0 0 0 0 0 0</pose>
     </include>
 
 <!--

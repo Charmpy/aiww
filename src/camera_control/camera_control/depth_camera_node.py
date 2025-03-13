@@ -3,6 +3,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
+import numpy as np
 
 class ImageSubscriber(Node):
     def __init__(self):
@@ -10,7 +11,7 @@ class ImageSubscriber(Node):
         super().__init__('image_subscriber')
         self.subscription = self.create_subscription(
             Image,
-            '/camera/image',  
+            '/depth_camera/image',  
             self.image_callback,
             10)
         self.bridge = CvBridge()
@@ -18,7 +19,8 @@ class ImageSubscriber(Node):
 
     def image_callback(self, msg):
         try:
-            image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            image = self.bridge.imgmsg_to_cv2(msg, "32FC1")
+            image = image/5
             cv2.imshow("Camera Image", image)
             cv2.waitKey(1)
         except Exception as e:

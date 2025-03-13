@@ -74,8 +74,8 @@
             <right_joint>frw_to_body</right_joint>
 
 
-            <wheel_separation>0.5</wheel_separation>
-            <wheel_radius>0.2</wheel_radius>
+            <wheel_separation>0.9</wheel_separation>
+            <wheel_radius>0.17</wheel_radius>
 
 
             <!-- Limits -->
@@ -126,7 +126,7 @@
                   </scan>
                   <range>
                       <min>0.3</min>
-                      <max>5</max>
+                      <max>15</max>
                   </range>
               </lidar>
               <topic>scan</topic>

@@ -11,6 +11,8 @@ RUN if getent passwd ubuntu > /dev/null 2>&1; then \
     fi && \
     groupadd --gid $USER_GID $USERNAME && \
     useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME && \
+    # mkdir -p -m 0700 /run/user/"${USER_UID}" \
+    # && chown $USERNAME:$USERNAME /run/user/"${USER_UID}" && \
     echo "Created new user $USERNAME"
 
 # Add sudo support for the non-root user
@@ -22,7 +24,7 @@ RUN apt-get update && apt-get install -y sudo \
 
 # Switch from root to user
 USER $USERNAME
-
+# ENV XDG_RUNTIME_DIR=/run/user/"${USER_UID}"
 # Add user to video group to allow access to webcam
 RUN sudo usermod --append --groups video $USERNAME
 
@@ -55,6 +57,12 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN sudo apt-get update \
     && sudo apt-get install -y ros-jazzy-xacro  ros-jazzy-joint-state-publisher-gui\
     && sudo apt-get install -y ros-jazzy-tf-transformations  ros-jazzy-rqt-tf-tree \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+RUN sudo apt update \
+    && sudo apt install -y ros-jazzy-navigation2 \
+    && sudo apt install -y ros-jazzy-nav2-bringup \
+    && sudo apt install -y ros-jazzy-slam-toolbox \
     && sudo rm -rf /var/lib/apt/lists/*
 
 FROM base AS dev

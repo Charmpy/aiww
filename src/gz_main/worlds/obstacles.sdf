@@ -254,7 +254,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='my_world_model'>
-      <pose>-15 -15 0 1.5699999999999998 0 0</pose>
+      <pose>-15 -15 0 1.5700000000000001 0 0</pose>
       <static>true</static>
       <link name='link'>
         <visual name='visual'>
@@ -274,7 +274,7 @@
           <geometry>
             <mesh>
               <uri>file:///my_world_model/meshes/World2.obj</uri>
-              <scale>0.001 0.001 0.001</scale>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </collision>
@@ -343,7 +343,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>2.9453667256932787 3.684392679643067 0.04139217858258918 2.1372422607637486e-07 -3.6465068148354491e-07 -5.3711275256610572e-10</pose>
+      <pose>2.9453667256932787 3.684392679643067 0.04139217858258918 2.137242260763814e-07 -3.6465068148355592e-07 -5.3711275256612164e-10</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
@@ -395,7 +395,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>2.8693418282574479 1.617303124331779 0.040826195442230484 2.1172861899102987e-07 -3.6465068147666044e-07 -5.3711250112001867e-10</pose>
+      <pose>2.8693418282574479 1.617303124331779 0.040826195442230484 2.1172861899103619e-07 -3.6465068147667156e-07 -5.3711250112003511e-10</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
@@ -1563,7 +1563,7 @@
         <pose>0 0 0 0 0 0</pose>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-4.3282890303885253 14.010214471203293 0.01610030257393474 1.7505580760791226e-06 -2.5166257453589153e-06 3.3954027412376147e-09</pose>
+      <pose>-4.3282890303885253 14.010214471203293 0.01610030257393474 1.7505580760818649e-06 -2.5166257453628582e-06 3.3954027412429302e-09</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
@@ -1598,7 +1598,7 @@
         <pose>0 0 0 0 0 0</pose>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-4.4151174414540879 13.047803641155523 0.015712318807058524 1.7055149445697023e-06 -2.4635891834573566e-06 3.2567577044432283e-09</pose>
+      <pose>-4.4151174414540879 13.047803641155523 0.015712318807058524 1.7055149445722555e-06 -2.4635891834610445e-06 3.2567577044481008e-09</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
@@ -1765,7 +1765,7 @@
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
-      <intensity>1</intensity>
+      <intensity>0.5</intensity>
       <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
       <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
       <specular>0.200000003 0.200000003 0.200000003 1</specular>
@@ -1782,7 +1782,7 @@
       </spot>
     </light>
     <light name='spotlight' type='spot'>
-      <pose>10 10 4 0 0 0</pose>
+      <pose>10 10 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
       <direction>0 0 -1</direction>
@@ -1801,7 +1801,7 @@
       </spot>
     </light>
     <light name='spotlight2' type='spot'>
-      <pose>10 -10 4 0 0 0</pose>
+      <pose>10 -10 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
       <direction>0 0 -1</direction>
@@ -1820,7 +1820,7 @@
       </spot>
     </light>
     <light name='spotlight3' type='spot'>
-      <pose>10 0 4 0 0 0</pose>
+      <pose>10 0 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
       <direction>0 0 -1</direction>
@@ -1841,10 +1841,10 @@
     <light name='spotlight4' type='spot'>
       <pose>-10 10 7 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
-      <intensity>3</intensity>
+      <intensity>9</intensity>
       <direction>0 0 -1</direction>
-      <diffuse>0.5 0.5 0.5 1</diffuse>
-      <specular>0.5 0.5 0.5 1</specular>
+      <diffuse>0.4 0.8 0.8 1</diffuse>
+      <specular>0.9 0.1 0.1 1</specular>
       <attenuation>
         <range>48</range>
         <linear>0.71296298503875732</linear>
@@ -1852,17 +1852,17 @@
         <quadratic>0.0010000000474974513</quadratic>
       </attenuation>
       <spot>
-        <inner_angle>2.0999999046325684</inner_angle>
-        <outer_angle>2.5</outer_angle>
+        <inner_angle>1.7</inner_angle>
+        <outer_angle>2</outer_angle>
         <falloff>2.7999999523162842</falloff>
       </spot>
     </light>
     <light name='spotlight5' type='spot'>
       <pose>-10 -7 7 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
-      <intensity>3</intensity>
+      <intensity>9</intensity>
       <direction>0 0 -1</direction>
-      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <diffuse>0.4 0.8 0.8 1</diffuse>
       <specular>0.5 0.5 0.5 1</specular>
       <attenuation>
         <range>48</range>
@@ -1871,8 +1871,8 @@
         <quadratic>0.0010000000474974513</quadratic>
       </attenuation>
       <spot>
-        <inner_angle>2.0999999046325684</inner_angle>
-        <outer_angle>2.5</outer_angle>
+        <inner_angle>1.7</inner_angle>
+        <outer_angle>2.0</outer_angle>
         <falloff>2.7999999523162842</falloff>
       </spot>
     </light>

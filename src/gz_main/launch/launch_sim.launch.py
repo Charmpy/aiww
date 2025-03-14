@@ -50,6 +50,11 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
+    route_control = Node(
+        package="route_controller",
+        executable="driver",
+        arguments=[]
+    )
 
     default_world = os.path.join(
             get_package_share_directory(package_name),
@@ -76,7 +81,7 @@ def generate_launch_description():
     # Run the spawner node from the ros_gz_sim package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
-                                   '-name', 'my_bot', "-z", '0.5' , "-y", '12.0', "-x", '6.0' ],
+                                   '-name', 'my_bot', "-z", '0.5' , "-y", '12.0', "-x", '7.0' ],
                         output='screen')
 
     # mover = Node(
@@ -186,6 +191,7 @@ def generate_launch_description():
 
         # start_localization,
         # start_navigation,
+        # route_control,
         # slam_launch,    
 
     ])

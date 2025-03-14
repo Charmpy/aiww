@@ -14,7 +14,7 @@
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="fr_wheel_1">
+<!-- <gazebo reference="fr_wheel_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
@@ -54,7 +54,7 @@
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
-</gazebo>
+</gazebo> -->
 
 <gazebo>
         <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
@@ -74,13 +74,13 @@
             <right_joint>frw_to_body</right_joint>
 
 
-            <wheel_separation>0.9</wheel_separation>
+            <wheel_separation>1.1</wheel_separation>
             <wheel_radius>0.17</wheel_radius>
 
 
             <!-- Limits -->
             <!-- <max_wheel_torque>200</max_wheel_torque> -->
-            <max_linear_acceleration>0.33</max_linear_acceleration>
+            <!-- <max_linear_acceleration>0.33</max_linear_acceleration> -->
 
             <!-- Input -->
             <topic>cmd_vel</topic>
@@ -97,6 +97,9 @@
         </plugin>
 
 </gazebo>
+
+
+
 <!-- <gazebo reference="cam_link_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -110,6 +113,23 @@
   <mu2>0.2</mu2>
   <self_collide>true</self_collide>
 </gazebo> -->
+
+<gazebo reference="br_wheel_1">
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+</gazebo>
+<gazebo reference="fl_wheel_1">
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+</gazebo>
+<gazebo reference="bl_wheel_1">
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+</gazebo>
+<gazebo reference="fr_wheel_1">
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+</gazebo>
 
   <gazebo reference="laser_frame">
           <sensor name="laser" type="gpu_lidar">

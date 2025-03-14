@@ -166,6 +166,7 @@ class Navi(Node):
         initpose.pose.pose.orientation.z = quaternion[2]
         initpose.pose.pose.orientation.w = quaternion[3]
         self.publisher_.publish(initpose)
+        # return initpose
 
     # Функция для указания стартового положения робота на карте
 

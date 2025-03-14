@@ -28,15 +28,18 @@ def main(args=None):
     navigator = BasicNavigator()
 
     navi = Navi()    
-    navi.publish(1.0, -0.3, 0.111) 
+    navi.publish(0.0, 0.0, 0.0) 
+    print("done")
+    # navigator.setInitialPose(navi.publish(0.0, 0.0, 0.0) )
     navigator.waitUntilNav2Active() # почему-то робот появлялся в точке (0,0,0). Так что задаю initial_pose через nav2_params
-
-    
-    # goal_pose = Navi.set_goal_pose(x, y, old_rot, time_)
-    # navigator.goToPose(goal_pose)
-    # while not navigator.isNavComplete():
-    #     pass
-    # print("done".join(RE.get_str()))
+    print("done")
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(2.0, -4.0, -1.57, time_)
+    navigator.goToPose(goal_pose)
+    print("done")
+    while not navigator.isNavComplete():
+        pass
+    print("done")
     
     rclpy.shutdown()
 

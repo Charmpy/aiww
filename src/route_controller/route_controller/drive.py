@@ -29,21 +29,64 @@ def main(args=None):
 
     navi = Navi()    
     navi.publish(0.0, 0.0, 0.0) 
-    print("done")
+
     # navigator.setInitialPose(navi.publish(0.0, 0.0, 0.0) )
     navigator.waitUntilNav2Active() # почему-то робот появлялся в точке (0,0,0). Так что задаю initial_pose через nav2_params
-    print("done")
+
     time_ = navigator.get_clock().now().to_msg()
-    goal_pose = Navi.set_goal_pose(2.0, -4.0, -1.57, time_)
+    goal_pose = Navi.set_goal_pose(2.0, 0.0, -1.57, time_)
     navigator.goToPose(goal_pose)
-    print("done")
+
     while not navigator.isNavComplete():
         pass
     print("done")
-    
-    rclpy.shutdown()
+    time_ = navigator.get_clock().now().to_msg()
 
-    
+    goal_pose = Navi.set_goal_pose(2.0, -4.0, -1.57, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+
+
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(0.0, -4.0, -3.14, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(-5.0, -5.0, -3.14, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+
+
+
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(-7.0, -5.0, -3.14, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+
+
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(-7.0, -10.0, -1.57, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+
+    time_ = navigator.get_clock().now().to_msg()
+    goal_pose = Navi.set_goal_pose(-7.0, -15.0, -1.57, time_)
+    navigator.goToPose(goal_pose)
+    while not navigator.isNavComplete():
+        pass
+    print("done")
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

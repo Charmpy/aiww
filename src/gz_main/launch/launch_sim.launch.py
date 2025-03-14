@@ -50,6 +50,11 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
+    route_control = Node(
+        package="route_controller",
+        executable="driver",
+        arguments=[]
+    )
 
     default_world = os.path.join(
             get_package_share_directory(package_name),
@@ -184,8 +189,9 @@ def generate_launch_description():
         spawn_entity,
         # move_control,
 
-        start_localization,
-        start_navigation,
+        # start_localization,
+        # start_navigation,
+        # route_control,
         # slam_launch,    
 
     ])

@@ -21,14 +21,14 @@ def generate_launch_description():
     robot_description_config = xacro.process_file(xacro_file)
     
     # Create a robot_state_publisher node
-    params = {'robot_description': robot_description_config.toxml(),  'use_sim_time': use_sim_time}
-    node_robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        # namespace="main_bot",
-        parameters=[params]
-    )
+    # params = {'robot_description': robot_description_config.toxml(),  'use_sim_time': use_sim_time}
+    # node_robot_state_publisher = Node(
+    #     package='robot_state_publisher',
+    #     executable='robot_state_publisher',
+    #     output='screen',
+    #     # namespace="main_bot",
+    #     parameters=[params]
+    # )
     rviz2 = Node(
             package='rviz2',
             namespace='',
@@ -43,9 +43,9 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
-            default_value='true',
+            default_value='false',
             description='Use sim time if true'),
 
-        node_robot_state_publisher,
-        # rviz2,
+        # node_robot_state_publisher,
+        rviz2,
     ])

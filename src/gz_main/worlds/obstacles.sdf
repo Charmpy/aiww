@@ -6,7 +6,7 @@
       <background>0.699999988 0.699999988 0.699999988 1</background>
     </scene>
     <physics name='1ms' type='ignored'>
-      <max_step_size>0.001</max_step_size>
+      <max_step_size>0.01</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>25</real_time_update_rate>
     </physics>
@@ -28,13 +28,13 @@
       </skin>
       <animation name='walk'>
         <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
+        <!-- <interpolate_x>true</interpolate_x> -->
       </animation>
       <script>
         <loop>true</loop>
         <delay_start>0</delay_start>
         <auto_start>true</auto_start>
-        <trajectory id='0' type='walk' tension='0.59999999999999998'>
+        <trajectory id='4' type='walk' tension='0.59999999999999998'>
           <waypoint>
             <time>0</time>
             <pose>0 0 0 0 0 0</pose>
@@ -74,13 +74,13 @@
       </skin>
       <animation name='walk'>
         <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
+        <!-- <interpolate_x>true</interpolate_x> -->
       </animation>
       <script>
         <loop>true</loop>
         <delay_start>0</delay_start>
         <auto_start>true</auto_start>
-        <trajectory id='0' type='walk' tension='0.59999999999999998'>
+        <trajectory id='3' type='walk' tension='0.59999999999999998'>
           <waypoint>
             <time>0</time>
             <pose>0 0 0 0 0 0</pose>
@@ -120,13 +120,13 @@
       </skin>
       <animation name='walk'>
         <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
+        <!-- <interpolate_x>true</interpolate_x> -->
       </animation>
       <script>
         <loop>true</loop>
         <delay_start>0</delay_start>
         <auto_start>true</auto_start>
-        <trajectory id='0' type='walk' tension='0.59999999999999998'>
+        <trajectory id='2' type='walk' tension='0.59999999999999998'>
           <waypoint>
             <time>0</time>
             <pose>0 0 0 0 0 0</pose>
@@ -166,13 +166,13 @@
       </skin>
       <animation name='walk'>
         <filename>https://fuel.gazebosim.org/1.0/Mingfei/models/actor/tip/files/meshes/walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
+        <!-- <interpolate_x>true</interpolate_x> -->
       </animation>
       <script>
         <loop>true</loop>
         <delay_start>0</delay_start>
         <auto_start>true</auto_start>
-        <trajectory id='0' type='walk' tension='0.59999999999999998'>
+        <trajectory id='1' type='walk' tension='0.59999999999999998'>
           <waypoint>
             <time>0</time>
             <pose>0 0 0 0 0 0</pose>

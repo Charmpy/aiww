@@ -68,6 +68,7 @@ RUN sudo apt update \
 FROM base AS dev
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV GZ_SIM_RESOURCE_PATH="/aiww/src/gz_main/models:$GZ_SIM_RESOURCE_PATH"
 # Install gazebo python3-gz-transport13
 RUN sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \

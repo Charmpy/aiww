@@ -1763,6 +1763,7 @@
       <pose>-6.8325920362499346 11.074641103674047 0.64800000000000002 0 0 0</pose>
     </include>
     <light name='sun' type='directional'>
+      <visualize>false</visualize>
       <pose>0 0 10 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>0.5</intensity>
@@ -1782,6 +1783,7 @@
       </spot>
     </light>
     <light name='spotlight' type='spot'>
+      <visualize>false</visualize>
       <pose>10 10 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
@@ -1801,6 +1803,7 @@
       </spot>
     </light>
     <light name='spotlight2' type='spot'>
+      <visualize>false</visualize>
       <pose>10 -10 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
@@ -1820,6 +1823,7 @@
       </spot>
     </light>
     <light name='spotlight3' type='spot'>
+      <visualize>false</visualize>
       <pose>10 0 6 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>3</intensity>
@@ -1839,6 +1843,7 @@
       </spot>
     </light>
     <light name='spotlight4' type='spot'>
+      <visualize>false</visualize>
       <pose>-10 10 7 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>9</intensity>
@@ -1858,6 +1863,7 @@
       </spot>
     </light>
     <light name='spotlight5' type='spot'>
+      <visualize>false</visualize>
       <pose>-10 -7 7 0 0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>9</intensity>

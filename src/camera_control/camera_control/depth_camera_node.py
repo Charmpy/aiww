@@ -4,6 +4,8 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
+import os
+
 
 class ImageSubscriber(Node):
     def __init__(self):
@@ -16,11 +18,17 @@ class ImageSubscriber(Node):
             10)
         self.bridge = CvBridge()
         self.get_logger().info('Image subscriber started')
+        self.k = 0
+        if not os.path.exists("/aiww/data/depth_camera"):
+            os.makedirs("/aiww/data/depth_camera")
 
     def image_callback(self, msg):
         try:
             image = self.bridge.imgmsg_to_cv2(msg, "32FC1")
-            image = image/5
+            image = image/10
+            if self.k % 3 == 0:
+                cv2.imwrite("/aiww/data/depth_camera/img" + str(self.k//3) + ".png", image*200)
+            self.k += 1
             cv2.imshow("Camera Image", image)
             cv2.waitKey(1)
         except Exception as e:

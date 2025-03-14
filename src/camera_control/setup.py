@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [ 
             'camera = camera_control.camera_node:main',
-            'depth_camera = depth_camera_control.camera_node:main'
+            'depth_camera = camera_control.depth_camera_node:main'
         ],
     },
 )

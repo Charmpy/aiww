@@ -15,3 +15,4 @@ gz topic -l
 gz topic -i --topic <название>
 12344
 ```
+ros2 launch gz_main launch_sim.launch.py map:=src/gz_main/maps/obstacle_map.yaml use_sim_time:=true

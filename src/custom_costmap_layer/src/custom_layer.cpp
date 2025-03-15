@@ -57,7 +57,7 @@ void CustomLayer::updateBounds(double robot_x, double robot_y, double robot_yaw,
 void CustomLayer::updateCosts(nav2_costmap_2d::Costmap2D& master_grid,
                               int min_i, int min_j, int max_i, int max_j)
 {
-    if (!has_updated_ && !points_.empty()) return;  // Обновляем только при новых данных
+    // if (!has_updated_ && !points_.empty()) return;  // Обновляем только при новых данных
 
     for (int j = min_j; j < max_j; j++) {
         for (int i = min_i; i < max_i; i++) {
@@ -73,7 +73,7 @@ void CustomLayer::updateCosts(nav2_costmap_2d::Costmap2D& master_grid,
 
                     if (distance <= radius_) {
                         // Градиент стоимости: максимум в центре, убывает к краям
-                        double cost = (1.0 - (distance / radius_)) * nav2_costmap_2d::LETHAL_OBSTACLE;
+                        double cost = (1.0) * nav2_costmap_2d::LETHAL_OBSTACLE;
                         max_cost = std::max(max_cost, cost);
                     }
                 }

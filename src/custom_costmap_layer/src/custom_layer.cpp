@@ -18,9 +18,13 @@ void CustomLayer::onInitialize()
     RCLCPP_INFO(node->get_logger(), "Custom Layer initialized");
 
     // Инициализация параметров
-    radius_param_ = rclcpp::Parameter("radius", 0.5);
-    node->declare_parameter("radius", rclcpp::ParameterValue(0.5));
-    radius_ = node->get_parameter("radius").get_value<double>();
+    // radius_param_ = rclcpp::Parameter("radius", 0.5);
+    // node->declare_parameter("radius", rclcpp::ParameterValue(0.5));
+    // radius_ = node->get_parameter("radius").get_value<double>();
+    declareParameter("radius", rclcpp::ParameterValue(0.5));
+    node->get_parameter(name_ + "." + "radius", radius_);
+
+    RCLCPP_INFO(node->get_logger(), "Radius = %f", radius_);
 
     // Подписка на топик /custom_costmap_points типа Float64MultiArray
     subscription_ = node->create_subscription<std_msgs::msg::Float64MultiArray>(
@@ -36,7 +40,7 @@ void CustomLayer::points_callback(const std_msgs::msg::Float64MultiArray::Shared
     // Копируем данные из Float64MultiArray в points_ как [x1, y1, x2, y2, ...]
     points_ = msg->data;
     has_updated_ = true;  // Отмечаем, что данные обновлены
-    RCLCPP_INFO(node->get_logger(), "Получено %zu точек (паре: %zu)", points_.size(), points_.size() / 2);
+    RCLCPP_INFO(node->get_logger(), "Received %zu points (pairs: %zu)", points_.size(), points_.size() / 2);
 }
 
 void CustomLayer::updateBounds(double robot_x, double robot_y, double robot_yaw,
